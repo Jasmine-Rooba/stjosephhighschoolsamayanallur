@@ -2,103 +2,130 @@
 .header {
   background-color: #003366;
   color: white;
-  padding: 10px 0;
-  position: relative;
+  padding: 20px 0;
 }
 
-.header .container {
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 0 20px;
 }
 
-.header .logo {
-  font-size: 1.8em;
-  font-weight: bold;
+.logo {
+  font-size: 24px;
 }
 
-.header .nav ul {
-  list-style: none;
+.nav ul {
+  display: flex;
+  list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex;
 }
 
-.header .nav ul li {
+.nav ul li {
   margin-left: 20px;
 }
 
-.header .nav ul li a {
+.nav ul li a {
   color: white;
   text-decoration: none;
-  font-size: 1em;
 }
 
-.header .nav ul li a:hover {
-  text-decoration: underline;
-}
-
-.header .menu-toggle {
+.menu-toggle {
   display: none;
   background: none;
   border: none;
-  color: white;
-  font-size: 1.5em;
   cursor: pointer;
 }
 
-.header .menu-icon::before {
-  content: "\2630"; /* Unicode for a hamburger icon */
+.menu-icon {
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.menu-icon::before {
+  top: -8px;
+}
+
+.menu-icon::after {
+  top: 8px;
+}
+
+/* Mobile View */
 @media (max-width: 768px) {
-  .header .nav {
+  .nav ul {
     display: none;
+    flex-direction: column;
+    background-color: #333;
     position: absolute;
     top: 60px;
-    left: 0;
-    background-color: #004d99;
+    right: 0;
     width: 100%;
-    text-align: center;
+    padding: 20px;
   }
 
-  .header .nav ul {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav ul.show-menu {
+    display: flex;
+  }
+}
+
+/* Header.css */
+/* ...existing styles... */
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .nav ul {
+    display: none;
     flex-direction: column;
+    background-color: rgba(0, 51, 102, 0.8);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 50%;
+    padding: 10px 20px; /* Reduce padding */
   }
 
-  .header .nav ul li {
-    margin: 15px 0;
+  .nav ul li {
+    margin: 10px 0; /* Reduce margin between menu items */
   }
 
-  .header .menu-toggle {
+  .nav ul li a {
+    font-size: 16px; /* Reduce font size */
+    padding: 10px 0; /* Adjust padding for touch-friendly size */
+  }
+
+  .menu-toggle {
     display: block;
   }
 
-  .header .menu-toggle.active + .nav {
-    display: block;
+  .nav ul.show-menu {
+    display: flex;
   }
 }
 
-/* src/components/Header.css */
-.header {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  background-color:  #003366;
-}
-
+/* Header.css */
 .header-logo {
-  width: 100px;
-  height: auto;
-  margin-right: 20px;
+  width: 100px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Optional: Space between the logo and the text */
 }
-
-.header-title {
-  font-size: 24px;
-  color: #333;
-}
-
-

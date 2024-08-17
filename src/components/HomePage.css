@@ -1,14 +1,85 @@
-/* src/components/HomePage.css */
+/* HomePage.css */
+
 .home-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center content horizontally */
+  text-align: center;
   padding: 20px;
 }
 
-.header-logo {
-  width: 30%; /* Responsive width */
+.highlight-container {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(0, 51, 102, 0.3); /* Border color with 30% opacity */
+  padding: 20px; /* Padding inside the box */
+  border-radius: 10px; /* Rounded corners for the box */
+  background-color: #f9f9f9; /* Background color of the box */
+  width: 300px;
+  text-align: center;
+}
+
+.highlight-image {
+  width: 150px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
-  max-width: 500px; /* Optional: Set a maximum width */
-  margin-bottom: 20px; /* Space below the logo */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+}
+
+.highlight-container:hover .highlight-image {
+  transform: scale(1.1); /* Slightly zoom in the image */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Darker shadow for highlight effect */
+}
+
+.name-box {
+ 
+  font-size: 20px; /* Adjust font size as needed */
+  font-weight: bold; /* Bold text for emphasis */
+  margin-top: 10px; /* Space between image and name box */
+  margin-bottom: 5px; /* Space between name box and position text */
+
+  padding: 15px; /* Padding inside the name box */
+  border: 2px solid rgba(0, 51, 102, 0.3); /* Border color with 30% opacity */
+  border-radius: 5px; /* Rounded corners for the name box */
+  background-color:rgba(0, 51, 102, 0.4) ; /* Background color of the name box */
+  
+
+}
+
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+h6 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.box {
+  display: inline-block;
+  margin: 20px auto; /* Adjust the space between boxes */
+  padding: 20px;
+  background-color: #f0f0f0; /* Background color for the box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+  border-radius: 10px;
+  width: 60%; /* Increased width */
+}
+
+.box-two, .box-three {
+  width: 70%; /* Adjust the width as needed */
+}
+
+.highlight-container {
+  position: relative;
+  text-align: center;
+}
+
+.name-box, .name-box2 {
+  font-size: 18px;
+  color: #003366;
+  margin-top: 10px;
+}
+
+.name-box2 {
+  font-weight: bold;
+  opacity: 0.4; /* Set opacity */
 }
