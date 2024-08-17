@@ -1,0 +1,104 @@
+/* Header.css */
+.header {
+  background-color: #003366;
+  color: white;
+  padding: 10px 0;
+  position: relative;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header .logo {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.header .nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header .nav ul li {
+  margin-left: 20px;
+}
+
+.header .nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.header .nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.header .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.header .menu-icon::before {
+  content: "\2630"; /* Unicode for a hamburger icon */
+}
+
+@media (max-width: 768px) {
+  .header .nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #004d99;
+    width: 100%;
+    text-align: center;
+  }
+
+  .header .nav ul {
+    flex-direction: column;
+  }
+
+  .header .nav ul li {
+    margin: 15px 0;
+  }
+
+  .header .menu-toggle {
+    display: block;
+  }
+
+  .header .menu-toggle.active + .nav {
+    display: block;
+  }
+}
+
+/* src/components/Header.css */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color:  #003366;
+}
+
+.header-logo {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.header-title {
+  font-size: 24px;
+  color: #333;
+}
+
+

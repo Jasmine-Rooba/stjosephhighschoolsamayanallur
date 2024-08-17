@@ -1,0 +1,67 @@
+/* styles.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.home-page {
+  text-align: center;
+  padding: 50px;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+}
+
+/* styles.css */
+.about-us, .academics, .admissions, .contact-us, .faculty, .gallery, .students {
+  padding: 20px;
+  margin: 20px;
+}
+
+.gallery-images img {
+  width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+/* styles.css */
+.page {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.about-page {
+  background-color: #f0f8ff;
+}
+
+.academics-page {
+  background-color: #e6f9ff;
+}
+
+.admissions-page {
+  background-color: #fff7e6;
+}
+
+.contact-page {
+  background-color: #e6ffe6;
+}
+
+.faculty-page {
+  background-color: #f2e6ff;
+}
+
+.gallery-page {
+  background-color: #f2f2f2;
+}
+
+.students-page {
+  background-color: #fff4e6;
+}
