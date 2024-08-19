@@ -9,40 +9,33 @@
   display: inline-block;
   position: relative;
   overflow: hidden;
-  border: 2px solid rgba(0, 51, 102, 0.3); /* Border color with 30% opacity */
-  padding: 20px; /* Padding inside the box */
-  border-radius: 10px; /* Rounded corners for the box */
-  background-color: #f9f9f9; /* Background color of the box */
+  padding: 20px;
+  border-radius: 10px;
   width: 300px;
   text-align: center;
 }
 
 .highlight-image {
-  width: 150px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+  width: 100%; /* Scale image to fit container */
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .highlight-container:hover .highlight-image {
-  transform: scale(1.1); /* Slightly zoom in the image */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Darker shadow for highlight effect */
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .name-box {
- 
-  font-size: 20px; /* Adjust font size as needed */
-  font-weight: bold; /* Bold text for emphasis */
-  margin-top: 10px; /* Space between image and name box */
-  margin-bottom: 5px; /* Space between name box and position text */
-
-  padding: 15px; /* Padding inside the name box */
-  border: 2px solid rgba(0, 51, 102, 0.3); /* Border color with 30% opacity */
-  border-radius: 5px; /* Rounded corners for the name box */
-  background-color:rgba(0, 51, 102, 0.4) ; /* Background color of the name box */
-  
-
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  padding: 15px;
+  border: 2px solid rgba(0, 51, 102, 0.3);
+  border-radius: 5px;
+  background-color: rgba(0, 51, 102, 0.4);
 }
-
 
 h1 {
   font-size: 24px;
@@ -56,16 +49,17 @@ h6 {
 
 .box {
   display: inline-block;
-  margin: 20px auto; /* Adjust the space between boxes */
+  margin: 20px auto;
   padding: 20px;
-  background-color: #f0f0f0; /* Background color for the box */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
-  border-radius: 10px;
-  width: 60%; /* Increased width */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  width: 60%;
+  border: 4px solid rgba(0, 51, 102, 0.3);
 }
 
 .box-two, .box-three {
-  width: 70%; /* Adjust the width as needed */
+  width: 70%;
 }
 
 .highlight-container {
@@ -73,13 +67,104 @@ h6 {
   text-align: center;
 }
 
-.name-box, .name-box2 {
+.name-box {
   font-size: 18px;
-  color: #003366;
+  color: #000000;
   margin-top: 10px;
 }
 
 .name-box2 {
   font-weight: bold;
-  opacity: 0.4; /* Set opacity */
+  color:#000000;
 }
+
+@media (max-width: 768px) {
+  .box {
+    width: 90%;
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .highlight-container {
+    width: 100%;
+    height: auto;
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
+
+  .highlight-image {
+    width: 100%; /* Ensure the image scales well on smaller screens */
+    height: auto;
+  }
+
+  .school-description {
+    padding: 10px; /* Adjust padding for better fit */
+  }
+
+  .school-description h2 {
+    font-size: 18px; /* Reduce font size for mobile */
+  }
+
+  .school-description p {
+    font-size: 12px; /* Adjust font size for better readability */
+    line-height: 1.4; /* Improve line spacing */
+  }
+}
+
+.app {
+  font-family: Arial, sans-serif;
+}
+
+.slider-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.slider-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .slider-section h2 {
+    font-size: 20px; /* Adjust heading size for smaller screens */
+  }
+}
+
+/* HomePage.css */
+
+/* Ensure navbar is on top */
+.navbar {
+  position: fixed; /* Fixed position to keep it on top */
+  width: 100%;
+  z-index: 1000; /* Higher z-index to ensure it stays above other content */
+}
+
+/* Adjustments for slider section */
+.slider-section {
+  padding-top: 60px; /* Adjust this value to prevent overlap with fixed navbar */
+}
+
+/* General styling adjustments */
+.home-page {
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px; /* Additional margin if needed to ensure spacing */
+}
+
+@media (max-width: 768px) {
+  .slider-section {
+    padding-top: 70px; /* Increase padding if navbar height increases */
+  }
+
+  .box {
+    width: 90%;
+  }
+
+  .highlight-container {
+    width: 100%;
+  }
+
+  .highlight-image {
+    width: 80%; /* Adjust image size for mobile view */
+  }
+}
+

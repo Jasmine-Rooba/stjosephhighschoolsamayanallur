@@ -1,9 +1,22 @@
+/* Navbar */
+.navbar {
+  position: fixed; /* Fix the navbar at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* High z-index to ensure it's above other content */
+  background-color: #fff; /* Add a background color to avoid transparency issues */
+  border-bottom: 1px solid #ccc; /* Optional: Add a bottom border for clarity */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for depth */
+}
+
 /* Navbar Toggler */
 .navbar-toggler {
   border: none;
   background: transparent;
   outline: none;
   padding: 0;
+  z-index: 1001; /* Ensure the toggler button stays on top */
 }
 
 .navbar-toggler.open .navbar-toggler-icon {
@@ -18,7 +31,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.95);
-  z-index: 999;
+  z-index: 999; /* Slightly lower z-index than the navbar */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,5 +72,19 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 998;
+  z-index: 998; /* Ensure the overlay is below the menu but above the rest of the content */
+}
+.home-page {
+  padding-top: 60px; /* Adjust based on the height of the navbar */
+}
+
+@media (max-width: 768px) {
+  .highlight-image {
+    max-height: calc(100vh - 60px); /* Ensure the image doesn't overlap the navbar */
+    object-fit: cover;
+  }
+
+  .navbar {
+    height: 60px; /* Ensure the navbar height is consistent */
+  }
 }

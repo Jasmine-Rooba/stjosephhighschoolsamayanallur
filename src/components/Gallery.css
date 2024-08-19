@@ -1,19 +1,85 @@
-/* src/components/Gallery.css */
-.gallery {
-  padding: 20px;
-  text-align: center;
-}
-
+/* Base styles for the grid */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 10px;
-  justify-items: center;
+  padding: 10px;
 }
 
-.gallery-item {
+/* Grid items */
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for larger screens */
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Styles for modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 80%;
+  background: white; /* Optional: Add a background for the modal */
+}
+
+.modal-image {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+  background: white; /* Optional: background for better visibility */
+  border-radius: 50%;
+  padding: 5px;
+}
+
+/* Responsive adjustments for mobile view */
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr); /* Four images per row */
+  }
+
+  .modal-content {
+    width: 100%;
+    height: auto;
+  }
+
+  .modal-image {
+    object-fit: cover; /* Ensures the image covers the modal */
+  }
+
+  .close-button {
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+  }
+}
+
+.gallery h6{
+  font-weight: bold
 }

@@ -1,0 +1,80 @@
+/* ImageSlider.css */
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px; /* Adjust the maximum width as needed */
+  height: 400px; /* Increased height for larger images */
+  margin: 0 auto; /* Center align the slider */
+}
+
+/* Container for all slides */
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Individual slide styles */
+.slide {
+  flex: 0 0 100%; /* Ensure each slide takes up the full width of the slider */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  overflow: hidden; /* Ensure overflow is hidden */
+}
+
+/* Image styles */
+.slide img {
+  width: 100%; /* Ensure image covers the slider width */
+  height: 100%; /* Ensure image fills the slider height */
+  object-fit: cover; /* Cover the slider area while maintaining aspect ratio */
+}
+
+/* Navigation dots */
+.dots {
+  position: absolute;
+  bottom: 15px; /* Adjusted for better visibility */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px; /* Adjust gap for better spacing */
+}
+
+.dot {
+  width: 10px; /* Adjust size for better visibility */
+  height: 10px; /* Adjust size for better visibility */
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .slider {
+    max-width: 90%; /* Reduce width for tablets */
+    height: 300px; /* Adjust height for smaller screens */
+  }
+
+  .dot {
+    width: 8px; /* Smaller dots for mobile view */
+    height: 8px; /* Smaller dots for mobile view */
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    max-width: 100%; /* Full width for very small screens */
+    height: 200px; /* Further adjust height for very small screens */
+  }
+
+  .dot {
+    width: 6px; /* Even smaller dots for very small screens */
+    height: 6px; /* Even smaller dots for very small screens */
+  }
+}
