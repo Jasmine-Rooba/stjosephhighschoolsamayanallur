@@ -1,34 +1,15 @@
 import React, { useState } from 'react';
 import './Gallery.css';
-
-// Import images
-import bookFest from '../images/bookfest.jpg';
-import photo1 from '../images/photo1.jpg';
-import photo2 from '../images/photo2.jpg';
-import photo3 from '../images/photo3.jpg';
-import photo4 from '../images/photo4.jpg';
-import photo5 from '../images/photo5.jpg';
-import photo6 from '../images/photo6.jpg';
-import photo7 from '../images/photo7.jpg';
-import photo8 from '../images/photo8.jpg';
-import photo9 from '../images/photo9.jpg';
+import { getGalleryImages, getSportsMeetImages, getAnnualDayImages,getSportsDayImages } from './helpers/imageHelpers'; // Import both helper functions
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null); // State for the selected image
   const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
 
-  const images = [
-    bookFest,
-    photo1,
-    photo2,
-    photo3,
-    photo4,
-    photo5,
-    photo6,
-    photo7,
-    photo8,
-    photo9
-  ];
+  const galleryImages = getGalleryImages(); // Get images for the gallery section
+  const sportsMeetImages = getSportsMeetImages(); // Get images for the sports meet section
+  const annualDayImages = getAnnualDayImages();
+  const sportsDayImages = getSportsDayImages();
 
   const openModal = (image) => {
     setSelectedImage(image);
@@ -43,13 +24,51 @@ const Gallery = () => {
   return (
     <div className="gallery">
       <h6>READING NOVEL FEST 2023</h6>
-
       <div className="gallery-grid">
-        {images.map((image, index) => (
+        {galleryImages.map((image, index) => (
           <div key={index} className="gallery-item">
             <img 
               src={image} 
               alt={`Gallery Image ${index + 1}`} 
+              onClick={() => openModal(image)} // Open modal on click
+            />
+          </div>
+        ))}
+      </div>
+
+      <h6>SPORTS MEET MARS 2023</h6>
+      <div className="gallery-grid">
+        {sportsMeetImages.map((image, index) => (
+          <div key={index} className="gallery-item">
+            <img 
+              src={image} 
+              alt={`Sports Meet Image ${index + 1}`} 
+              onClick={() => openModal(image)} // Open modal on click
+            />
+          </div>
+        ))}
+      </div>
+
+       <h6>ANNUAL DAY</h6>
+      <div className="gallery-grid">
+        {annualDayImages.map((image, index) => (
+          <div key={index} className="gallery-item">
+            <img 
+              src={image} 
+              alt={`Annual Day Image ${index + 1}`} 
+              onClick={() => openModal(image)} // Open modal on click
+            />
+          </div>
+        ))}
+      </div>
+
+       <h6>SPORTS DAY</h6>
+      <div className="gallery-grid">
+        {sportsDayImages.map((image, index) => (
+          <div key={index} className="gallery-item">
+            <img 
+              src={image} 
+              alt={`Sports Day Image ${index + 1}`} 
               onClick={() => openModal(image)} // Open modal on click
             />
           </div>

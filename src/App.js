@@ -10,6 +10,8 @@ import Faculty from './pages/Faculty';
 import Students from './pages/Students';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import 'leaflet/dist/leaflet.css';
+
 
 const App = () => {
   return (

@@ -1,3 +1,32 @@
+/* General NavLink Styles */
+.nav-link {
+  font-size: 1.5rem;
+  color: #333; /* Default color */
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 5px; /* Add a slight rounding for hover effect */
+}
+
+/* Hover State */
+.nav-link:hover {
+  color: #fff; /* Color when hovered */
+  background-color: #007bff; /* Highlight color on hover */
+}
+
+/* Active State */
+.nav-link.active {
+  color: #fff; /* Color for active state */
+  background-color: #0056b3; /* Highlight color for active state */
+  border-radius: 5px; /* Ensure the active link also has rounded corners */
+}
+
+/* Hover Over Active State */
+.nav-link.active:hover {
+  color: #fff; /* Ensure text color remains white */
+  background-color: #004494; /* Darker blue when hovering over an active link */
+}
+
 /* Navbar */
 .navbar {
   position: fixed; /* Fix the navbar at the top */
@@ -54,17 +83,6 @@
   margin: 15px 0;
 }
 
-.nav-link {
-  font-size: 1.5rem;
-  color: #333;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #007bff;
-}
-
 .overlay {
   position: fixed;
   top: 0;
@@ -74,6 +92,7 @@
   background: rgba(0, 0, 0, 0.5);
   z-index: 998; /* Ensure the overlay is below the menu but above the rest of the content */
 }
+
 .home-page {
   padding-top: 60px; /* Adjust based on the height of the navbar */
 }
@@ -86,5 +105,9 @@
 
   .navbar {
     height: 60px; /* Ensure the navbar height is consistent */
+  }
+
+  .nav-link {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
   }
 }

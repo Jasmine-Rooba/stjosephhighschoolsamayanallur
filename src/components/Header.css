@@ -129,3 +129,65 @@
   height: auto; /* Maintain aspect ratio */
   margin-right: 10px; /* Optional: Space between the logo and the text */
 }
+
+
+.header-logo {
+  height: 60px;
+  margin-right: 20px;
+}
+
+/* Hover effect */
+.nav ul li a:hover {
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 8px 18px; /* Adding space inside the link */
+  box-shadow: 0 4px 8px rgba(0, 51, 102, 0.5); /* Adding shadow for highlight */
+   background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white for individual link hover */
+  box-shadow: 0 4px 8px rgba(0, 51, 102, 0.5); /* Adding shadow for highlight */
+}
+
+/* Active state */
+.nav ul li a.active {
+  color: #ffffff;
+  background-color: rgba(102, 153, 204, 0.7); /* Semi-transparent lighter shade for active state */
+  border-radius: 5px;
+  padding: 8px 18px; /* Adding space inside the link */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+
+
+.menu-icon::before {
+  top: -8px;
+}
+
+.menu-icon::after {
+  top: 8px;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #f8f9fa;
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .show-menu {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+
