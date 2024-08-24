@@ -168,3 +168,246 @@ h6 {
   }
 }
 
+/* General styles for the card panel */
+.card-panel {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Card styling with gradient background and dynamic shapes */
+.card {
+  background: linear-gradient(135deg, #003366, #cce5ff); /* Gradient background */
+  padding: 20px;
+  border-radius: 15px;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #ffffff; /* Bold white text color for contrast */
+
+}
+
+/* Add dynamic shapes to the cards */
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  animation: moveShapes 8s infinite alternate;
+}
+
+.card::before {
+  width: 100px;
+  height: 100px;
+  top: -30px;
+  right: -30px;
+}
+
+.card::after {
+  width: 150px;
+  height: 150px;
+  bottom: -40px;
+  left: -40px;
+}
+
+@keyframes moveShapes {
+  0% { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(20px) translateY(20px); }
+}
+
+/* Hover effects */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments for mobile view */
+@media (max-width: 768px) {
+  .card {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    transform: rotate(0deg); /* Reset rotation for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+
+  /* Accordion style for mobile view */
+  .card-panel {
+    flex-direction: column;
+  }
+
+  .card {
+    cursor: pointer;
+    overflow: hidden;
+    height: 60px; /* Collapsed height */
+    background: #ff7e5f;
+    transition: height 0.3s ease;
+  }
+
+  .card h3, .card p {
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+     font-weight: bold; /* Ensure text is bold */
+  color: #ffffff; /* White color for better readability */
+  }
+
+  .card.active {
+    height: 150px; /* Expanded height */
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Expand with gradient */
+  }
+
+  .card.active h3, .card.active p {
+    opacity: 1;
+    padding: 10px 0;
+  }
+}
+
+/* Special design for flip effect on mobile */
+@media (max-width: 480px) {
+  .card {
+    perspective: 1000px; /* Needed for 3D effect */
+  }
+
+  .card .inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+  }
+
+  .card.active .inner {
+    transform: rotateY(180deg);
+  }
+
+  .card .front,
+  .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  .card .front {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  }
+
+  .card .back {
+    background: #ff7e5f;
+    transform: rotateY(180deg);
+  }
+}
+
+/* Mobile view styling for cards */
+@media (max-width: 768px) {
+  .card {
+    width: 80%; /* Adjust width for mobile view */
+    margin: 10px 0; /* Add vertical spacing between cards */
+    background: linear-gradient(135deg, #003366, #cce5ff); /* Gradient background */
+    color: #ffffff; /* Bold white text color */
+    padding: 20px; /* Ensure padding to make space for text */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Keep shadow for better visibility */
+  }
+
+  .card h3, 
+  .card p {
+    font-weight: bold; /* Ensure text is bold */
+    color: #ffffff; /* White color for better readability */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    opacity: 1; /* Ensure text is fully visible */
+    text-align: center; /* Center align text */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%; /* Full width for mobile */
+    cursor: pointer;
+    overflow: hidden;
+    height: 60px; /* Collapsed height */
+    background: linear-gradient(135deg, #003366, #cce5ff); /* Gradient background */
+    color: #ffffff; /* Bold white text color */
+    padding: 10px; /* Ensure padding for text visibility */
+    transition: height 0.3s ease;
+  }
+
+  .card h3, 
+  .card p {
+    font-weight: bold; /* Ensure text is bold */
+    color: #000000; /* White color for better readability */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    opacity: 1; /* Ensure text is fully visible */
+    text-align: center; /* Center align text */
+  }
+
+  .card.active {
+    height: 150px; /* Expanded height for active state */
+    background: linear-gradient(135deg, #003366, #cce5ff); /* Gradient background */
+    color: #ffffff; /* Bold white text color */
+  }
+
+  .card.active h3, 
+  .card.active p {
+    opacity: 1;
+    padding: 10px 0;
+  }
+
+  /* Flip effect on mobile */
+  .card {
+    perspective: 1000px; /* Enable 3D effect */
+  }
+
+  .card .inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+  }
+
+  .card.active .inner {
+    transform: rotateY(180deg);
+  }
+
+  .card .front,
+  .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center; /* Center align content vertically */
+    justify-content: center; /* Center align content horizontally */
+  }
+
+  .card .front {
+    background: linear-gradient(135deg, #003366, #cce5ff);
+  }
+
+  .card .back {
+    background: #003366;
+    transform: rotateY(180deg);
+  }
+}
+
+
+
