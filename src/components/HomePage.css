@@ -1,52 +1,95 @@
-/* HomePage.css */
-
+/* General Styling */
 .home-page {
   text-align: center;
   padding: 20px;
+  font-family: Times New Roman;
+  margin-top: 60px;
 }
 
-.highlight-container {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
+/* Slider Section */
+.slider-section {
+  padding-top: 60px;
   text-align: center;
 }
 
-.highlight-image {
-  width: 100%; /* Scale image to fit container */
-  height: auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.highlight-container:hover .highlight-image {
-  transform: scale(1.1);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.name-box {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  padding: 15px;
-  border: 2px solid rgba(0, 51, 102, 0.3);
-  border-radius: 5px;
-  background-color: rgba(0, 51, 102, 0.4);
-}
-
-h1 {
+.slider-section h2 {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-h6 {
-  font-size: 18px;
-  margin-bottom: 20px;
+.slider-section img {
+  width: 70%;
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Prevent images from overflowing */
 }
 
+/* Highlight Section */
+.highlight-container {
+  position: relative;
+  display: inline-block;
+  padding: 0; /* Remove padding to ensure full image visibility */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden;
+  text-align: center;
+  width: 200px; /* Increased width for the container */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-container:hover {
+  transform: scale(1.05); /* Slightly smaller scale for hover effect */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.highlight-image {
+  width: 100%;
+  height: auto; /* Allow image height to adjust based on aspect ratio */
+  object-fit: cover; /* Ensure the image covers the container */
+  border-radius: 10px; /* Matches container's border-radius */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.highlight-container:hover .highlight-image {
+  transform: scale(1.1); /* Enlarge image on hover */
+  filter: brightness(1.2); /* Brighten image on hover */
+}
+
+.highlight-text {
+  margin-top: 10px; /* Space between image and text */
+  text-align: center;
+  opacity: 0.8; /* Slightly transparent text */
+  display: block; /* Ensure the text block is visible */
+  width: 100%; /* Make sure text takes full width of container */
+}
+
+/* Position text outside the image */
+.name-box {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px;
+  background-color: rgba(0, 51, 102, 0.6);
+  color: #ffffff;
+  border-radius: 5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin-top: 10px; /* Margin to separate from the image */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 200px; /* Default width */
+  height: 60px; /* Fixed height for proper vertical centering */
+  max-width: 100%; /* Prevent overflow */
+  margin: 0 auto; /* Center the box within its container */
+}
+
+.name-box2 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 5px; /* Add some spacing between the two text elements */
+  display: block; /* Ensure the text block is visible */
+}
+
+/* Box Styling */
 .box {
   display: inline-block;
   margin: 20px auto;
@@ -58,141 +101,34 @@ h6 {
   border: 4px solid rgba(0, 51, 102, 0.3);
 }
 
-.box-two, .box-three {
-  width: 70%;
-}
-
-.highlight-container {
-  position: relative;
-  text-align: center;
-}
-
-.name-box {
-  font-size: 18px;
-  color: #000000;
-  margin-top: 10px;
-}
-
-.name-box2 {
-  font-weight: bold;
-  color:#000000;
-}
-
-@media (max-width: 768px) {
-  .box {
-    width: 90%;
-    padding: 15px; /* Adjust padding for smaller screens */
-  }
-
-  .highlight-container {
-    width: 100%;
-    height: auto;
-    padding: 10px; /* Reduce padding on smaller screens */
-  }
-
-  .highlight-image {
-    width: 100%; /* Ensure the image scales well on smaller screens */
-    height: auto;
-  }
-
-  .school-description {
-    padding: 10px; /* Adjust padding for better fit */
-  }
-
-  .school-description h2 {
-    font-size: 18px; /* Reduce font size for mobile */
-  }
-
-  .school-description p {
-    font-size: 12px; /* Adjust font size for better readability */
-    line-height: 1.4; /* Improve line spacing */
-  }
-}
-
-.app {
-  font-family: Arial, sans-serif;
-}
-
-.slider-section {
-  padding: 20px;
-  text-align: center;
-}
-
-.slider-section h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  .slider-section h2 {
-    font-size: 20px; /* Adjust heading size for smaller screens */
-  }
-}
-
-/* HomePage.css */
-
-/* Ensure navbar is on top */
-.navbar {
-  position: fixed; /* Fixed position to keep it on top */
-  width: 100%;
-  z-index: 1000; /* Higher z-index to ensure it stays above other content */
-}
-
-/* Adjustments for slider section */
-.slider-section {
-  padding-top: 60px; /* Adjust this value to prevent overlap with fixed navbar */
-}
-
-/* General styling adjustments */
-.home-page {
-  text-align: center;
-  padding: 20px;
-  margin-top: 60px; /* Additional margin if needed to ensure spacing */
-}
-
-@media (max-width: 768px) {
-  .slider-section {
-    padding-top: 70px; /* Increase padding if navbar height increases */
-  }
-
-  .box {
-    width: 90%;
-  }
-
-  .highlight-container {
-    width: 100%;
-  }
-
-  .highlight-image {
-    width: 80%; /* Adjust image size for mobile view */
-  }
-}
-
-/* General styles for the card panel */
+/* Card Panel */
 .card-panel {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
   flex-wrap: wrap;
+  margin-top: 20px;
   gap: 20px;
 }
 
-/* Card styling with gradient background and dynamic shapes */
 .card {
-  background: linear-gradient(135deg, #003366, #cce5ff); /* Gradient background */
+  background: linear-gradient(135deg, #003366, #cce5ff);
   padding: 20px;
   border-radius: 15px;
-  width: 30%;
+  width: 25%; /* Reduced width for larger screens */
   text-align: center;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  color: #fff;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #ffffff; /* Bold white text color for contrast */
-
 }
 
-/* Add dynamic shapes to the cards */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Animated Shapes in Cards */
 .card::before,
 .card::after {
   content: '';
@@ -221,193 +157,64 @@ h6 {
   100% { transform: translateX(20px) translateY(20px); }
 }
 
-/* Hover effects */
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive adjustments for mobile view */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
+  .box {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .highlight-container {
+    width: 150px; /* Adjusted width for responsive view */
+  }
+
+  .highlight-image {
+    width: 100%;
+    height: auto;
+  }
+
   .card {
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    transform: rotate(0deg); /* Reset rotation for mobile */
+    width: 45%; /* Adjusted width for tablets */
+    margin: 10px 0;
+  }
+
+  .name-box {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    width: 150px; /* Adjust width for tablets */
+    height: 45px; /* Adjust height for tablets */
+  }
+
+  .name-box2 {
+    font-size: 14px; /* Adjust font size for smaller screens */
   }
 }
 
 @media (max-width: 480px) {
-  .card {
+  .box {
     width: 100%;
   }
 
-  /* Accordion style for mobile view */
-  .card-panel {
-    flex-direction: column;
+  .highlight-container {
+    width: 100%; /* Full width on very small screens */
+  }
+
+  .highlight-image {
+    width: 100%;
+    height: auto;
   }
 
   .card {
-    cursor: pointer;
-    overflow: hidden;
-    height: 60px; /* Collapsed height */
-    background: #ff7e5f;
-    transition: height 0.3s ease;
+    width: 100%; /* Full width on very small screens */
+    margin: 10px 0;
   }
 
-  .card h3, .card p {
-    margin: 0;
-    padding: 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-     font-weight: bold; /* Ensure text is bold */
-  color: #ffffff; /* White color for better readability */
+  .name-box {
+    font-size: 12px; /* Further adjust font size for very small screens */
+    width: 120px; /* Adjust width for very small screens */
+    height: 40px; /* Adjust height for very small screens */
   }
 
-  .card.active {
-    height: 150px; /* Expanded height */
-    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Expand with gradient */
-  }
-
-  .card.active h3, .card.active p {
-    opacity: 1;
-    padding: 10px 0;
+  .name-box2 {
+    font-size: 12px; /* Further adjust font size for very small screens */
   }
 }
-
-/* Special design for flip effect on mobile */
-@media (max-width: 480px) {
-  .card {
-    perspective: 1000px; /* Needed for 3D effect */
-  }
-
-  .card .inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.8s;
-  }
-
-  .card.active .inner {
-    transform: rotateY(180deg);
-  }
-
-  .card .front,
-  .card .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 15px;
-    padding: 20px;
-  }
-
-  .card .front {
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
-  }
-
-  .card .back {
-    background: #ff7e5f;
-    transform: rotateY(180deg);
-  }
-}
-
-/* Mobile view styling for cards */
-@media (max-width: 768px) {
-  .card {
-    width: 80%; /* Adjust width for mobile view */
-    margin: 10px 0; /* Add vertical spacing between cards */
-    background: linear-gradient(135deg, #003366, #cce5ff); /* Gradient background */
-    color: #ffffff; /* Bold white text color */
-    padding: 20px; /* Ensure padding to make space for text */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Keep shadow for better visibility */
-  }
-
-  .card h3, 
-  .card p {
-    font-weight: bold; /* Ensure text is bold */
-    color: #ffffff; /* White color for better readability */
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove default padding */
-    opacity: 1; /* Ensure text is fully visible */
-    text-align: center; /* Center align text */
-  }
-}
-
-@media (max-width: 480px) {
-  .card {
-    width: 100%; /* Full width for mobile */
-    cursor: pointer;
-    overflow: hidden;
-    height: 60px; /* Collapsed height */
-    background: linear-gradient(135deg, #003366, #cce5ff); /* Gradient background */
-    color: #ffffff; /* Bold white text color */
-    padding: 10px; /* Ensure padding for text visibility */
-    transition: height 0.3s ease;
-  }
-
-  .card h3, 
-  .card p {
-    font-weight: bold; /* Ensure text is bold */
-    color: #000000; /* White color for better readability */
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove default padding */
-    opacity: 1; /* Ensure text is fully visible */
-    text-align: center; /* Center align text */
-  }
-
-  .card.active {
-    height: 150px; /* Expanded height for active state */
-    background: linear-gradient(135deg, #003366, #cce5ff); /* Gradient background */
-    color: #ffffff; /* Bold white text color */
-  }
-
-  .card.active h3, 
-  .card.active p {
-    opacity: 1;
-    padding: 10px 0;
-  }
-
-  /* Flip effect on mobile */
-  .card {
-    perspective: 1000px; /* Enable 3D effect */
-  }
-
-  .card .inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.8s;
-  }
-
-  .card.active .inner {
-    transform: rotateY(180deg);
-  }
-
-  .card .front,
-  .card .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 15px;
-    padding: 20px;
-    display: flex;
-    align-items: center; /* Center align content vertically */
-    justify-content: center; /* Center align content horizontally */
-  }
-
-  .card .front {
-    background: linear-gradient(135deg, #003366, #cce5ff);
-  }
-
-  .card .back {
-    background: #003366;
-    transform: rotateY(180deg);
-  }
-}
-
-
-

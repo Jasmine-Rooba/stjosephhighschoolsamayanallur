@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import ImageSlider from './ImageSlider';
 import logo from '../images/logo.jpg';
-import photo2 from '../images/photo2.jpg';
-import photo4 from '../images/photo4.jpg';
-import photo5 from '../images/photo5.jpg';
-import photo6 from '../images/photo6.jpg';
-import photo7 from '../images/photo7.jpg';
+import hmimage from '../images/HM_image.jpg';
+import bookFest from '../images/bookfest.jpg';
+import sportsMeet1 from '../images/Sports Meet/photo_2024-08-19_19-16-36.jpg';
+import annualDay2 from '../images/Annual Day/photo_2024-08-20_11-40-26.jpg';
+import sportsDay1 from '../images/Sports Day/photo_2024-08-20_12-29-25.jpg';
+import sportsDay5 from '../images/Sports Day/photo_2024-08-20_12-29-36.jpg';
 import photo8 from '../images/photo8.jpg';
 import './HomePage.css'; // Import the CSS file
 
 const HomePage = () => {
   const images = [
-    photo2,
-    photo4,
-    photo5,
-    photo6,
-    photo7,
-    photo8
+    bookFest,
+    sportsMeet1,
+    annualDay2,
+    sportsDay1,
+      photo8,
+      sportsDay5
   ];
 
   const [dateTime, setDateTime] = useState(new Date());
@@ -42,32 +43,36 @@ const HomePage = () => {
       <div className="box box-two">
         <div className="highlight-container">
           <img src={logo} alt="logo" className="highlight-image" />
-          <p className="name-box">REV.FR.MARTIN JOSEPH</p>
-          <p className="name-box2">CORRESPONDENT</p>
         </div>
+        <div className="highlight-text">
+            <p className="name-box">REV.FR.MARTIN JOSEPH</p>
+            <p className="name-box2">CORRESPONDENT</p>
+          </div>
       </div>
       <div className="box box-three">
         <div className="highlight-container">
-          <img src={logo} alt="logo" className="highlight-image" />
-          <p className="name-box">LAWRENCE EDWIN BABU.G</p>
-          <p className="name-box2">HEAD MASTER</p>
+          <img src={hmimage} alt="logo" className="highlight-image" />
         </div>
+         <div className="highlight-text">
+            <p className="name-box">LAWRENCE EDWIN BABU.G</p>
+            <p className="name-box2">HEAD MASTER</p>
+          </div>
+      </div>
+      {/* 3 Card Panel */}
+      <div className="card-panel">
+        <div className="card">
+          <h3>Date & Time</h3>
+          <p>{dateTime.toLocaleString()}</p>
         </div>
-         {/* 3 Card Panel */}
-        <div className="card-panel">
-          <div className="card">
-            <h3>Date & Time</h3>
-            <p>{dateTime.toLocaleString()}</p>
-          </div>
-          <div className="card">
-            <h3>Opening Hours</h3>
-            <p>Mon - Fri: 9:00 AM - 3:30 PM</p>
-            <p>Sat: 9:00 AM - 1:00 PM</p>
-          </div>
-          <div className="card">
-            <h3>Student Count</h3>
-            <p></p>
-          </div>
+        <div className="card">
+          <h3>Opening Hours</h3>
+          <p>Mon - Fri: 9:00 AM - 3:30 PM</p>
+          <p>Sat: 9:00 AM - 1:00 PM</p>
+        </div>
+        <div className="card">
+          <h3>Student Count</h3>
+          <p>{count}</p>
+        </div>
       </div>
     </div>
   );

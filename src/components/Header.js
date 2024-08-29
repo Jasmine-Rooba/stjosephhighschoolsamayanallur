@@ -33,7 +33,7 @@ const Header: React.FC = () => {
                 activeClassName="active"
                 onClick={toggleMenu}
               >
-                About Us
+                About
               </NavLink>
             </li>
             <li>
@@ -87,7 +87,7 @@ const Header: React.FC = () => {
                 activeClassName="active"
                 onClick={toggleMenu}
               >
-                Contact Us
+                Contact
               </NavLink>
             </li>
           </ul>

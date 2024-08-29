@@ -15,12 +15,6 @@ const Footer = () => {
       <div className="footer-content">
         <img src={footerImage} alt="School Logo" className="footer-logo" />
         <p>ST. JOSEPH HIGH SCHOOL SAMAYANALLUR</p>
-         <ul className="navbar-nav">
-            <NavLink className="nav-link" to="/academics" exact activeClassName="active">Academics</NavLink>
-            <NavLink className="nav-link" to="/faculty" exact activeClassName="active">Faculty</NavLink>
-            <NavLink className="nav-link" to="/gallery" exact activeClassName="active">Gallery</NavLink>
-            <NavLink className="nav-link" to="/contact" exact activeClassName="active">Contact Us</NavLink>
-        </ul>
         <ul className="footer-data">
           <p>Contact Us</p>
           <p><AiFillPhone /> +91 9942698742</p> {/* Phone number with icon */}

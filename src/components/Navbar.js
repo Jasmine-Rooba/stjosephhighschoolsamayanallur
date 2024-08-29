@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className={`full-screen-menu ${isOpen ? 'open' : ''}`}>
         <ul className="navbar-nav">
           <li className="nav-item">
-            <NavLink className="nav-link" to="/about" exact activeClassName="active" onClick={toggleMenu}>About Us</NavLink>
+            <NavLink className="nav-link" to="/about" exact activeClassName="active" onClick={toggleMenu}>About</NavLink>
           </li>
           <li className="nav-item">
             <NavLink className="nav-link" to="/academics" exact activeClassName="active" onClick={toggleMenu}>Academics</NavLink>
@@ -39,7 +39,7 @@ const Navbar = () => {
             <NavLink className="nav-link" to="/gallery" exact activeClassName="active" onClick={toggleMenu}>Gallery</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/contact" exact activeClassName="active" onClick={toggleMenu}>Contact Us</NavLink>
+            <NavLink className="nav-link" to="/contact" exact activeClassName="active" onClick={toggleMenu}>Contact</NavLink>
           </li>
         </ul>
       </div>
